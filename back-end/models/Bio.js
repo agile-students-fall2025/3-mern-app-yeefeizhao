@@ -8,7 +8,7 @@ const bioSchema = new Schema(
       required: true,
     },
     introParagraph: {
-      type: Array,
+      type: String,
       required: true,
     },
     profilePicUrl: {
