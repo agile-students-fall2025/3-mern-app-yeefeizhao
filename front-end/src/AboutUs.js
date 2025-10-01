@@ -36,7 +36,7 @@ function AboutUs() {
       {!loaded && <img src={loadingIcon} alt="loading" />}
 
       {bio.profilePicUrl ? <img src={bio.profilePicUrl} alt="" className='photo'/> : <></>}
-      {bio.introParagraph ? <p>{bio.introParagraph.join('\n\n')}</p> : <p>Your introduction paragraph about yourself...</p>}
+      {bio.introParagraph ? <p>{bio.introParagraph}</p> : <p>Your introduction paragraph about yourself...</p>}
     </div>
   )
 }
