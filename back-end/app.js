@@ -21,6 +21,24 @@ mongoose
 // load the dataabase models we want to deal with
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
+const { Bio } = require('./models/Bio')
+
+app.get('/bio', async (req, res) => {
+  // load all messages from database
+  try {
+    const bios = await Bio.find({})
+    res.json({
+      bios: bios,
+      status: 'all good',
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(400).json({
+      error: err,
+      status: 'failed to retrieve bios from the database',
+    })
+  }
+})
 
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
